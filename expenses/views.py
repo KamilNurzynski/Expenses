@@ -26,4 +26,5 @@ class ExpenseListView(ListView):
 class CategoryListView(ListView):
     model = Category
     paginate_by = 5
+    x = 5 # to do wywalenia
 
