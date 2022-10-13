@@ -23,8 +23,8 @@ class ExpenseListView(ListView):
             summary_per_category=summary_per_category(queryset),
             **kwargs)
 
+
 class CategoryListView(ListView):
     model = Category
     paginate_by = 5
-    x = 5 # to do wywalenia
 
