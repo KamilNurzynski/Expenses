@@ -14,3 +14,6 @@ def summary_per_category(queryset):
         .values_list('category_name', 's')
     ))
 
+
+def total_amount(queryset):
+    return sum([total for total in summary_per_category(queryset).values()])
