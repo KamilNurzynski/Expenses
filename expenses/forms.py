@@ -17,9 +17,6 @@ class ExpenseSearchForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['name'].required = False
-
-    # def __init__(self, *args, **kwargs):
-    #     super(ExpenseSearchForm, self).__init__(*args, **kwargs)
-    #     self.fields['name'].required = False
-    #     for visible in self.visible_fields():
-    #         visible.field.widget.attrs['class'] = 'form-control'
+        for visible in self.visible_fields():
+            if visible.name != 'categories':
+                visible.field.widget.attrs['class'] = 'form-control'
